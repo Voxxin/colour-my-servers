@@ -1,12 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "com.github.voxxin.cms.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "ServerNameMixin",
+    "WorldNameEditMixin",
+    "CreateWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1
