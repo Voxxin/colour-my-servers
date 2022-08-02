@@ -13,20 +13,18 @@
   },
 
   "license": "MIT",
-  "icon": "assets/cms/icon.png",
+  "icon": "assets/colourmyservers/icon.png",
 
   "environment": "*",
   "entrypoints": {
   },
   "mixins": [
-    "modid.mixins.json"
+    "colourmyservers.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "~1.19",
-    "java": ">=17"
+    "fabric": "*"
   },
   "suggests": {
     "another-mod": "*"

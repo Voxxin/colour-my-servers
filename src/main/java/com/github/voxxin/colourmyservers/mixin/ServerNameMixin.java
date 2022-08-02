@@ -1,4 +1,4 @@
-package com.github.voxxin.cms.mixin;
+package com.github.voxxin.colourmyservers.mixin;
 
 import net.minecraft.client.gui.screen.AddServerScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
