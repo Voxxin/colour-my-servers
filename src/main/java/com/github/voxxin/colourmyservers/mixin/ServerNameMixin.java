@@ -1,8 +1,12 @@
 package com.github.voxxin.colourmyservers.mixin;
 
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.gui.screen.AddServerScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.network.ServerInfo;
+import net.minecraft.command.argument.ColorArgumentType;
+import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -14,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ServerNameMixin {
 
     @Shadow private TextFieldWidget serverNameField;
-
 
     @Shadow @Final private ServerInfo server;
 
@@ -33,8 +36,8 @@ public abstract class ServerNameMixin {
         serverNameField.setText(serverNameField.getText().replace("&7", "§7"));
         serverNameField.setText(serverNameField.getText().replace("&8", "§8"));
         serverNameField.setText(serverNameField.getText().replace("&9", "§9"));
-        serverNameField.setText(serverNameField.getText().replace("&b", "§a"));
-        serverNameField.setText(serverNameField.getText().replace("&a", "§b"));
+        serverNameField.setText(serverNameField.getText().replace("&a", "§a"));
+        serverNameField.setText(serverNameField.getText().replace("&b", "§b"));
         serverNameField.setText(serverNameField.getText().replace("&c", "§c"));
         serverNameField.setText(serverNameField.getText().replace("&d", "§d"));
         serverNameField.setText(serverNameField.getText().replace("&e", "§e"));
@@ -45,6 +48,14 @@ public abstract class ServerNameMixin {
         serverNameField.setText(serverNameField.getText().replace("&o", "§o"));
         serverNameField.setText(serverNameField.getText().replace("&m", "§m"));
         serverNameField.setText(serverNameField.getText().replace("&k", "§k"));
+
+        serverNameField.setText(Text.literal(serverNameField.getText()).styled(style -> style.withColor(TextColor.fromRgb(0xDEB887))).getString());
+        serverNameField.setMessage(Text.literal(serverNameField.getText()).styled(style -> style.withColor(TextColor.fromRgb(0xDEB887))));
+        System.out.println(serverNameField.getText());
+        System.out.println(Text.literal(serverNameField.getText()).styled(style -> style.withColor(0xDEB887)).getString());
+        System.out.println(serverNameField.getMessage());
+
+        TextColor color = TextColor.fromRgb(0xDEB887);
     }
 
     @Inject(at = @At("TAIL"), method = "Lnet/minecraft/client/gui/screen/AddServerScreen;init()V")
@@ -63,8 +74,8 @@ public abstract class ServerNameMixin {
             serverNameField.setText(serverNameField.getText().replace("§7", "&7"));
             serverNameField.setText(serverNameField.getText().replace("§8", "&8"));
             serverNameField.setText(serverNameField.getText().replace("§9", "&9"));
-            serverNameField.setText(serverNameField.getText().replace("§b", "&a"));
-            serverNameField.setText(serverNameField.getText().replace("§a", "&b"));
+            serverNameField.setText(serverNameField.getText().replace("§a", "&a"));
+            serverNameField.setText(serverNameField.getText().replace("§b", "&b"));
             serverNameField.setText(serverNameField.getText().replace("§c", "&c"));
             serverNameField.setText(serverNameField.getText().replace("§d", "&d"));
             serverNameField.setText(serverNameField.getText().replace("§e", "&e"));
@@ -75,6 +86,7 @@ public abstract class ServerNameMixin {
             serverNameField.setText(serverNameField.getText().replace("§o", "&o"));
             serverNameField.setText(serverNameField.getText().replace("§m", "&m"));
             serverNameField.setText(serverNameField.getText().replace("§k", "&k"));
+
         }
     }
 }
