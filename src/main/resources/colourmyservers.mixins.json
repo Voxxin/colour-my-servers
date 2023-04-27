@@ -6,9 +6,10 @@
   "mixins": [
   ],
   "client": [
+    "CreateWorldMixin",
     "ServerNameMixin",
-    "WorldNameEditMixin",
-    "CreateWorldMixin"
+    "TextFieldWidgetMixin",
+    "WorldNameEditMixin"
   ],
   "injectors": {
     "defaultRequire": 1
