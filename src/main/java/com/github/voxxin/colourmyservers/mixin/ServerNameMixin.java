@@ -53,28 +53,7 @@ public abstract class ServerNameMixin {
         // Changes provided colours back to a user readable format.
 
         if (serverNameField.getText() != "") {
-            serverNameField.setText(serverNameField.getText().replace("§0", "&0"));
-            serverNameField.setText(serverNameField.getText().replace("§1", "&1"));
-            serverNameField.setText(serverNameField.getText().replace("§2", "&2"));
-            serverNameField.setText(serverNameField.getText().replace("§3", "&3"));
-            serverNameField.setText(serverNameField.getText().replace("§4", "&4"));
-            serverNameField.setText(serverNameField.getText().replace("§5", "&5"));
-            serverNameField.setText(serverNameField.getText().replace("§6", "&6"));
-            serverNameField.setText(serverNameField.getText().replace("§7", "&7"));
-            serverNameField.setText(serverNameField.getText().replace("§8", "&8"));
-            serverNameField.setText(serverNameField.getText().replace("§9", "&9"));
-            serverNameField.setText(serverNameField.getText().replace("§b", "&a"));
-            serverNameField.setText(serverNameField.getText().replace("§a", "&b"));
-            serverNameField.setText(serverNameField.getText().replace("§c", "&c"));
-            serverNameField.setText(serverNameField.getText().replace("§d", "&d"));
-            serverNameField.setText(serverNameField.getText().replace("§e", "&e"));
-            serverNameField.setText(serverNameField.getText().replace("§f", "&f"));
-
-            serverNameField.setText(serverNameField.getText().replace("§u", "&u"));
-            serverNameField.setText(serverNameField.getText().replace("§l", "&l"));
-            serverNameField.setText(serverNameField.getText().replace("§o", "&o"));
-            serverNameField.setText(serverNameField.getText().replace("§m", "&m"));
-            serverNameField.setText(serverNameField.getText().replace("§k", "&k"));
+            serverNameField.setText(serverNameField.getText().replace("§", "&"));
         }
     }
 }
