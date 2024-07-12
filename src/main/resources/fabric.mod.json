@@ -11,7 +11,6 @@
   "contact": {
     "homepage": "https://modrinth.com/user/ella"
   },
-
   "license": "MIT",
   "icon": "assets/colourmyservers/icon.png",
 
@@ -23,7 +22,6 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.17",
-    "fabric": "*"
+    "fabricloader": ">=0.14.17"
   }
 }

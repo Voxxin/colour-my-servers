@@ -4,12 +4,15 @@
   "package": "com.github.voxxin.colourmyservers.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "world.EditWorldScreenMixin"
   ],
   "client": [
-    "CreateWorldMixin",
-    "ServerNameMixin",
-    "TextFieldWidgetMixin",
-    "WorldNameEditMixin"
+    "server.EditServerScreenMixin",
+    "server.ServerSelectionListMixin",
+    "world.CreateWorldScreenGameTabMixin",
+    "world.CreateWorldScreenMixin",
+    "world.WorldCreationUiStateMixin",
+    "world.WorldSelectionListMixin"
   ],
   "injectors": {
     "defaultRequire": 1
