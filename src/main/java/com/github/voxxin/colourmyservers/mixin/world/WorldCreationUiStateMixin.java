@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(WorldCreationUiState.class)
 public class WorldCreationUiStateMixin {
 
-    @Inject(at = @At(value = "INVOKE_ASSIGN", target = "Ljava/lang/String;trim()Ljava/lang/String;"), method = "findResultFolder", cancellable = true)
+    @Inject(at = @At(value = "HEAD"), method = "findResultFolder")
     private void findResultFolder(String string, CallbackInfoReturnable<String> cir) {
-        cir.setReturnValue(new ComponentU(string).getComponent().getString());
+        string = new ComponentU(string).parse().getString();
     }
 }

@@ -14,11 +14,11 @@ public class ServerSelectionListMixin {
             method = "render",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;IIIZ)I", ordinal = 0
+                    target = "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V", ordinal = 0
             )
     )
-    private int render(GuiGraphics instance, Font font, String string, int i, int j, int k, boolean bl) {
-        net.minecraft.network.chat.Component component = new ComponentU(string).getComponent();
-        return instance.drawString(font, component, i, j, k, bl);
+    private void render(GuiGraphics instance, Font font, String string, int i, int j, int k) {
+        net.minecraft.network.chat.Component component = new ComponentU(string).parse();
+        instance.drawString(font, component, i, j, k);
     }
 }
